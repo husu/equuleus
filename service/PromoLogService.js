@@ -37,7 +37,7 @@ module.exports = function (options) {
 
     function _log(req, myPiece) {
         var log = PromoExLog.new({
-            ip: req.ip,
+            ip: req.headers["x-real-ip"],
             uberId: req.body.uberId,
             phone: req.body.phone,
             promoId: req.params.promoId
